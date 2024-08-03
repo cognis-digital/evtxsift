@@ -1,3 +1,4 @@
 2024-06-14T11:11:01  style(parser): dedupe overlapping findings
 2024-07-06T18:28:08  chore(format): make timestamps timezone-aware
 2024-07-11T13:45:15  refactor(core): respect .gitignore when walking
+2024-08-03T08:02:22  test(io): document the config keys
