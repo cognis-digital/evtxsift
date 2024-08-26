@@ -2,3 +2,4 @@
 2024-07-06T18:28:08  chore(format): make timestamps timezone-aware
 2024-07-11T13:45:15  refactor(core): respect .gitignore when walking
 2024-08-03T08:02:22  test(io): document the config keys
+2024-08-26T15:19:29  docs: here be dragons
