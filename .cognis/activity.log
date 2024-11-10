@@ -6,3 +6,4 @@
 2024-09-01T10:36:36  feat(scan): reduce false positives on edge cases
 2024-09-23T17:53:43  chore(fixtures): load rules lazily for faster startup
 2024-10-16T12:10:50  refactor(engine): memoize repeated lookups
+2024-11-09T19:27:57  build(format): add a --quiet mode
