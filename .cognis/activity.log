@@ -17,3 +17,4 @@
 2025-04-06T15:43:53  build(cli): reduce false positives on edge cases
 2025-04-11T10:00:00  fix(report): load rules lazily for faster startup
 2025-05-04T17:17:07  docs(ci): memoize repeated lookups
+2025-05-27T12:34:14  perf(detect): lower memory on big inputs
