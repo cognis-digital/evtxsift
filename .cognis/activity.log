@@ -23,3 +23,4 @@
 2025-07-17T09:25:35  fix(tests): trim whitespace in parsed fields
 2025-08-09T16:42:42  docs(scan): stream large files without buffering
 2025-09-01T11:59:49  ci(report): add type hints to the public API
+2025-09-07T18:16:56  feat(deps): add a fast path for the common case
