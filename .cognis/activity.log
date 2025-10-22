@@ -25,3 +25,4 @@
 2025-09-01T11:59:49  ci(report): add type hints to the public API
 2025-09-07T18:16:56  feat(deps): add a fast path for the common case
 2025-09-29T13:33:03  chore(detect): guard against ReDoS in patterns
+2025-10-22T08:50:10  refactor(core): add pagination to large reports
