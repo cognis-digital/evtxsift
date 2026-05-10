@@ -36,3 +36,4 @@
 2026-03-20T16:06:06  docs(io): add color + severity icons
 2026-03-25T11:23:13  perf: speed. I am speed.
 2026-04-16T18:40:20  style(scan): pin the test dependencies
+2026-05-10T13:57:27  build(fixtures): support stdin as a source
