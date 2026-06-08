@@ -1,0 +1,22 @@
+[
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:14:01", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:14:11", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:14:22", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:14:35", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:14:49", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:15:02", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4624, "TimeCreated": "2026-06-01T02:15:20", "Computer": "DC01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:20:00", "Computer": "DC01", "TargetUserName": "jsmith", "IpAddress": "198.51.100.23", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:20:05", "Computer": "DC01", "TargetUserName": "awilson", "IpAddress": "198.51.100.23", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:20:11", "Computer": "DC01", "TargetUserName": "bchan", "IpAddress": "198.51.100.23", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:20:18", "Computer": "DC01", "TargetUserName": "mgarcia", "IpAddress": "198.51.100.23", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:20:24", "Computer": "DC01", "TargetUserName": "klee", "IpAddress": "198.51.100.23", "LogonType": 3},
+  {"EventID": 4625, "TimeCreated": "2026-06-01T02:20:31", "Computer": "DC01", "TargetUserName": "rpatel", "IpAddress": "198.51.100.23", "LogonType": 3},
+  {"EventID": 7045, "TimeCreated": "2026-06-01T02:30:00", "Computer": "DC01", "SubjectUserName": "administrator", "ServiceFileName": "C:\\Windows\\Temp\\svc.exe powershell -enc SQBFAFgA"},
+  {"EventID": 4720, "TimeCreated": "2026-06-01T02:31:00", "Computer": "DC01", "TargetUserName": "svc_backup"},
+  {"EventID": 4732, "TimeCreated": "2026-06-01T02:31:30", "Computer": "DC01", "TargetUserName": "svc_backup"},
+  {"EventID": 4624, "TimeCreated": "2026-06-01T02:40:00", "Computer": "WS01", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 10},
+  {"EventID": 4624, "TimeCreated": "2026-06-01T02:41:00", "Computer": "WS02", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4624, "TimeCreated": "2026-06-01T02:42:00", "Computer": "FILESRV1", "TargetUserName": "administrator", "IpAddress": "203.0.113.66", "LogonType": 3},
+  {"EventID": 4624, "TimeCreated": "2026-06-01T08:00:00", "Computer": "WS05", "TargetUserName": "normaluser", "IpAddress": "10.0.0.5", "LogonType": 2}
+]
