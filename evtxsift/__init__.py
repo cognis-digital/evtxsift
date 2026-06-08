@@ -1,26 +1,11 @@
-"""EVTXSIFT - threat-hunting over exported Windows event logs.
-
-Defensive forensics/triage tool. Parses normalized Windows Security event
-records (JSON or CSV exported from EVTX) and surfaces brute-force,
-persistence, and lateral-movement signals. Standard library only.
-"""
-from .core import (
-    Finding,
-    Record,
-    load_records,
-    analyze,
-    SEVERITY_ORDER,
-)
-
-TOOL_NAME = "evtxsift"
-TOOL_VERSION = "1.0.0"
-
-__all__ = [
-    "Finding",
-    "Record",
-    "load_records",
-    "analyze",
-    "SEVERITY_ORDER",
-    "TOOL_NAME",
-    "TOOL_VERSION",
-]
+"""evtxsift — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from evtxsift.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from evtxsift.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "evtxsift"
+    TOOL_VERSION = "0.1.0"
+__version__ = TOOL_VERSION
