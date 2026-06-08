@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/evtxsift",
+  "version": "0.2.0",
+  "description": "JavaScript port of evtxsift (Cognis Neural Suite)",
+  "bin": {
+    "evtxsift": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
