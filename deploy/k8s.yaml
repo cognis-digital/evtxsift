@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: evtxsift, labels: { app: evtxsift } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: evtxsift } }
+  template:
+    metadata: { labels: { app: evtxsift } }
+    spec:
+      containers:
+        - name: evtxsift
+          image: ghcr.io/cognis-digital/evtxsift:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: evtxsift }
+spec:
+  selector: { app: evtxsift }
+  ports: [{ port: 80, targetPort: 8000 }]
