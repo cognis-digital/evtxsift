@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-evtxsift
+pip install "git+https://github.com/cognis-digital/evtxsift.git"
 evtxsift scan .            # → prioritized findings in seconds
 ```
 
@@ -47,7 +47,7 @@ Find brute-force, persistence & lateral-movement signals in exported Windows eve
 ## Quick start
 
 ```bash
-pip install cognis-evtxsift
+pip install "git+https://github.com/cognis-digital/evtxsift.git"
 evtxsift --version
 evtxsift scan .                       # scan current project
 evtxsift scan . --format json         # machine-readable
