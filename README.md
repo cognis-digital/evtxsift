@@ -20,6 +20,41 @@ pip install cognis-evtxsift
 evtxsift scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+1. **Install** the CLI:
+
+   ```bash
+   pipx install "git+https://github.com/cognis-digital/evtxsift.git"
+   ```
+
+2. **Hunt** an exported event log (JSON array or CSV) for threats — the primary command:
+
+   ```bash
+   evtxsift hunt events.json
+   evtxsift hunt events.csv --input-format csv
+   ```
+
+3. **Tune detection thresholds** — brute-force window, password-spray, and lateral-movement sensitivity:
+
+   ```bash
+   evtxsift hunt events.json \
+     --window 5 --fail-threshold 5 --spray-threshold 5 --lateral-threshold 3
+   ```
+
+4. **Read the output** — table, JSON, or a shareable HTML report written to a file:
+
+   ```bash
+   evtxsift hunt events.json --format json -o findings.json
+   evtxsift hunt events.json --format html -o report.html
+   ```
+
+5. **Automate in a pipeline** — surface high-signal detections from JSON:
+
+   ```bash
+   evtxsift hunt events.json --format json | jq '.findings[] | select(.severity=="high")'
+   ```
+
 ## Contents
 
 - [Why evtxsift?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
