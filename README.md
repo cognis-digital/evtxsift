@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/evtxsift.git"
 evtxsift scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+evtxsift helps security teams and IT administrators quickly find signs of attack in Windows event log exports. You point it at a JSON or CSV file of exported Windows Security events and it automatically spots patterns like repeated failed login attempts, an account being used to hop across multiple computers, or suspicious programs being installed as Windows services. It produces a clear report — as a table, JSON, or HTML — showing what it found and how serious each issue is, so you can focus your investigation on the most dangerous activity first. It is designed for analysts and developers who want a lightweight, scriptable tool that works on any platform without requiring cloud services or complex setup.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why evtxsift?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -44,6 +50,42 @@ Find brute-force, persistence & lateral-movement signals in exported Windows eve
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`evtxsift` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/evtxsift/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/evtxsift/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/evtxsift.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/evtxsift.git"  # uv
+pip install "git+https://github.com/cognis-digital/evtxsift.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/evtxsift.git
+cd evtxsift && pip install .
+```
+
+Then run:
+```sh
+evtxsift --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
