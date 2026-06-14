@@ -136,7 +136,21 @@ def _render_html(findings: list[Finding], source: str) -> str:
 
 
 def _cmd_hunt(args: argparse.Namespace) -> int:
+    # Validate numeric thresholds — must be at least 1.
+    for flag, val in (
+        ("--window", args.window),
+        ("--fail-threshold", args.fail_threshold),
+        ("--spray-threshold", args.spray_threshold),
+        ("--lateral-threshold", args.lateral_threshold),
+    ):
+        if val < 1:
+            print(f"error: {flag} must be >= 1 (got {val})", file=sys.stderr)
+            return 2
+
     path = Path(args.input)
+    if not path.exists():
+        print(f"error: input file does not exist: {args.input}", file=sys.stderr)
+        return 2
     try:
         text = path.read_text(encoding="utf-8", errors="replace")
     except OSError as exc:
@@ -164,7 +178,11 @@ def _cmd_hunt(args: argparse.Namespace) -> int:
         out = _render_table(findings)
 
     if args.output:
-        Path(args.output).write_text(out, encoding="utf-8")
+        try:
+            Path(args.output).write_text(out, encoding="utf-8")
+        except OSError as exc:
+            print(f"error: cannot write output to {args.output}: {exc}", file=sys.stderr)
+            return 2
         print(f"wrote {args.format} report to {args.output} "
               f"({len(findings)} finding(s), {len(records)} event(s) scanned)",
               file=sys.stderr)

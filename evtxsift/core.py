@@ -142,12 +142,25 @@ def load_records(text: str, fmt: str = "auto") -> list[Record]:
         data = json.loads(text)
         if isinstance(data, dict):
             # Allow {"Events": [...]} or a single record.
-            for key in ("Events", "events", "records", "data"):
-                if isinstance(data.get(key), list):
-                    data = data[key]
+            _ENVELOPE_KEYS = ("Events", "events", "records", "data")
+            for key in _ENVELOPE_KEYS:
+                val = data.get(key)
+                if val is not None:
+                    # Key exists — it must be a list or the input is malformed.
+                    if not isinstance(val, list):
+                        raise ValueError(
+                            f"Expected a JSON array under '{key}', "
+                            f"got {type(val).__name__!r}"
+                        )
+                    data = val
                     break
             else:
+                # No envelope key found — treat the dict itself as a single record.
                 data = [data]
+        if not isinstance(data, list):
+            raise ValueError(
+                f"Expected a JSON array of event records, got {type(data).__name__}"
+            )
         rows = [r for r in data if isinstance(r, dict)]
     else:
         reader = csv.DictReader(io.StringIO(text))
@@ -389,7 +402,19 @@ def analyze(
     spray_threshold: int = 5,
     lateral_threshold: int = 3,
 ) -> list[Finding]:
-    """Run all detection rules and return findings sorted by severity."""
+    """Run all detection rules and return findings sorted by severity.
+
+    All threshold/window parameters must be >= 1; a ValueError is raised
+    otherwise so callers get a clear diagnostic instead of silent misfires.
+    """
+    for name, val in (
+        ("bf_window_min", bf_window_min),
+        ("bf_threshold", bf_threshold),
+        ("spray_threshold", spray_threshold),
+        ("lateral_threshold", lateral_threshold),
+    ):
+        if not isinstance(val, int) or val < 1:
+            raise ValueError(f"{name} must be a positive integer >= 1, got {val!r}")
     recs = list(records)
     findings: list[Finding] = []
     findings += _detect_bruteforce(recs, bf_window_min, bf_threshold)
